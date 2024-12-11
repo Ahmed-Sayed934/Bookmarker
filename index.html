@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script
+			src="https://kit.fontawesome.com/732c1700eb.js"
+			crossorigin="anonymous"
+		></script>
+		<title>Bookmarker</title>
+
+		<link rel="stylesheet" href="./css/bootstrap.min.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+		<div
+			class="container d-flex flex-column justify-content-center align-items-center py-5"
+		>
+			<h1 class="py-2 position-relative">Bookmarker</h1>
+
+			<div
+				class="bookmark-data container d-flex flex-column align-items-center py-5"
+			>
+				<h2>Bookmark your favorite sites</h2>
+				<div class="w-100 py-4">
+					<label for="siteName" class="form-label mt-2"
+						><i class="fa-solid fa-book-bookmark pe-2"></i>Site Name</label
+					>
+					<div class="input-group has-validation">
+						<input
+							type="text"
+							class="form-control"
+							oninput="validateInputs(this)"
+							placeholder="Bookmark name"
+							id="siteName"
+							aria-describedby="siteNameFeedback"
+						/>
+						<div id="siteNameFeedback" class="invalid-feedback">
+							<p>Please start with Capital letter (A-Z)</p>
+						</div>
+					</div>
+					<label for="siteUrl" class="form-label mt-2"
+						><i class="fa-solid fa-link pe-2"></i>Site URL</label
+					>
+					<div class="input-group has-validation">
+						<input
+							type="text"
+							class="form-control"
+							oninput="validateInputs(this)"
+							placeholder="Website URL"
+							id="siteUrl"
+							aria-describedby="siteUrlFeedback"
+						/>
+						<div id="siteUrlFeedback" class="invalid-feedback">
+							<p>Please Enter Valid Website URL (www.example.com)</p>
+						</div>
+					</div>
+				</div>
+				<button
+					disabled
+					onclick="addSite()"
+					class="btn btn-submit px-5"
+					id="submitBtn"
+				>
+					Submit
+				</button>
+			</div>
+
+			<table class="table mt-4 text-center">
+				<thead>
+					<tr>
+						<th scope="col">index</th>
+						<th scope="col">Website Name</th>
+						<th scope="col">Visit</th>
+						<th scope="col">Delete</th>
+					</tr>
+				</thead>
+				<tbody id="rowDataContianer">
+					<!-- <tr>
+						<th scope="row">1</th>
+						<td>Mark</td>
+						<td>
+							<a href="http://" target="_blank">
+								<button class="btn btn-success">
+									<i class="fa-solid fa-eye pe-2"></i>Visit
+								</button></a
+							>
+						</td>
+						<td>
+							<button class="btn btn-danger pe-2">
+								<i class="fa-solid fa-trash-can"></i>
+								Delete
+							</button>
+						</td>
+					</tr> -->
+				</tbody>
+			</table>
+		</div>
+
+		<script src="./js/bootstrap.bundle.min.js"></script>
+		<script src="./js/main.js"></script>
+	</body>
+</html>
